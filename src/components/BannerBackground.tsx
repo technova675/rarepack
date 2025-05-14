@@ -13,7 +13,7 @@ const BannerBackground: React.FC = () => {
     </div>
   ))
 
-    // horizontal spans
+  // horizontal spans
   const hItems = Array.from({ length: count }).map((_, i) => (
     <span key={i} className="inline-block px-4 bg-white text-xs font-semibold border border-gray-300  rounded-sm whitespace-nowrap">
       RARE PACKAGE
@@ -23,7 +23,7 @@ const BannerBackground: React.FC = () => {
   return (
     <>
 
-    {/* ⬇️ horizontal marquee at the bottom ⬇️ */}
+      {/* ⬇️ horizontal marquee at the bottom ⬇️ */}
       <motion.div
         className="fixed top-16 -left-5 right-[-5rem] w-[110vw] h-12  bg-gray-100  z-50 overflow-hidden -rotate-3"
         initial={{ opacity: 0 }}
@@ -49,37 +49,48 @@ const BannerBackground: React.FC = () => {
       </motion.div>
 
       {/* ⬇️ Vertical marquee at the bottom ⬇️ */}
-    <motion.div
-      className="fixed -top-3 right-[5rem] h-[110vh] w-12 bg-gray-100 z-50 overflow-hidden -rotate-10"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 0.5, duration: 0.9 }}
-    >
-      {/* marquee wrapper */}
       <motion.div
-        className="absolute top-0 left-0 w-full flex flex-col items-center gap-24"
-        initial={{ y: 0 }}
-        animate={{ y: '-50%' }}
-        transition={{
-          ease: 'linear',
-          duration: 30,         // adjust speed here
-          repeat: Infinity,
-          repeatType: 'loop',
-        }}
+        className="
+        fixed 
+        -top-3 
+        right-0       /* mobile: flush to the very right edge */
+        sm:right-[5rem]  /* from sm (640px) up: your original 5rem offset */
+        h-[110vh] 
+        w-8           /* mobile: narrower so it doesn’t swamp the screen */
+        sm:w-12       /* from sm up: your original width */
+        bg-gray-100 
+        z-50 
+        overflow-hidden 
+        -rotate-2 sm:-rotate-10
+        "
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5, duration: 0.9 }}
       >
-        {/* first batch */}
-        {items}
-        {/* duplicate batch */}
-        {items.map((child, i) =>
-          React.cloneElement(child, { key: `dup-${i}` })
-        )}
+        {/* marquee wrapper */}
+        <motion.div
+          className="absolute top-0 left-0 w-full flex flex-col items-center gap-24"
+          initial={{ y: 0 }}
+          animate={{ y: '-50%' }}
+          transition={{
+            ease: 'linear',
+            duration: 30,         // adjust speed here
+            repeat: Infinity,
+            repeatType: 'loop',
+          }}
+        >
+          {/* first batch */}
+          {items}
+          {/* duplicate batch */}
+          {items.map((child, i) =>
+            React.cloneElement(child, { key: `dup-${i}` })
+          )}
+        </motion.div>
       </motion.div>
-    </motion.div>
 
-    
-      </>
+
+    </>
   )
 }
 
 export default BannerBackground
-
