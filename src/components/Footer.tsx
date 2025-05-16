@@ -1,23 +1,58 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { FaBars, FaTimes } from 'react-icons/fa'
 
-const Footer: React.FC = () => (
-  <footer className="w-full absolute bottom-4 flex justify-center">
-    {/* shrink-to-fit box */}
-    <div className="w-auto">
-      {/* line that matches the width of this box */}
-      <hr className="border-t border-gray-300" />
+const Footer: React.FC = () => {
+  const [open, setOpen] = useState(false)
 
-      {/* links + trademark all together */}
-      <div className="flex items-center justify-center space-x-6 pt-2 text-xs text-gray-400">
-        <a href="#" className="hover:text-gray-500">TOS</a>
-        <a href="#" className="hover:text-gray-500">Policies</a>
-        <a href="#" className="hover:text-gray-500">Returns</a>
-        <a href="#" className="hover:text-gray-500">Testimonials</a>
-        <a href="#" className="hover:text-gray-500">Why?</a>
-        <span className="whitespace-nowrap">rarepackage regd. trademark</span>
+  return (
+    <footer className="w-full absolute bottom-4 flex justify-center">
+      <div className="w-auto relative overflow-visible text-xs text-gray-400">
+        <hr className="border-t border-gray-300 mb-2" />
+
+        {/* 🏷 trademark + burger on one line */}
+        <div className="flex sm:hidden items-center justify-center space-x-3 whitespace-nowrap px-4">
+          <button onClick={() => setOpen(v => !v)} aria-label="Toggle menu">
+            {open ? <FaTimes size={18}/> : <FaBars size={18}/>}
+          </button>
+          <span>rarepackage regd. trademark</span>
+        </div>
+
+        {/* ⚙️ Mobile menu: slide up */}
+        {open && (
+          <nav
+            className="
+              sm:hidden
+              absolute
+              bottom-full    /* ⚠️ anchor above the footer line */
+              left-0
+              w-full
+              bg-white
+              shadow-lg
+              z-50
+              flex flex-col space-y-2
+              p-4
+            "
+          >
+            <a href="#" className="hover:text-gray-500">TOS</a>
+            <a href="#" className="hover:text-gray-500">Policies</a>
+            <a href="#" className="hover:text-gray-500">Returns</a>
+            <a href="#" className="hover:text-gray-500">Testimonials</a>
+            <a href="#" className="hover:text-gray-500">Why?</a>
+          </nav>
+        )}
+
+        {/* 💻 Desktop links */}
+        <div className="hidden sm:flex items-center justify-center space-x-6 pt-2">
+          <a href="#" className="hover:text-gray-500">TOS</a>
+          <a href="#" className="hover:text-gray-500">Policies</a>
+          <a href="#" className="hover:text-gray-500">Returns</a>
+          <a href="#" className="hover:text-gray-500">Testimonials</a>
+          <a href="#" className="hover:text-gray-500">Why?</a>
+          <span className="whitespace-nowrap">rarepackage regd. trademark</span>
+        </div>
       </div>
-    </div>
-  </footer>
-)
+    </footer>
+  )
+}
 
 export default Footer
