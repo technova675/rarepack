@@ -2,9 +2,9 @@ import React from 'react'
 import ProductItem from './ProductItem'
 
 const products = [
-  { src: 'src/assets/images/chain.png', alt: 'Chain' },
-  { src: 'src/assets/images/bracelet.png', alt: 'Bracelet' },
-  { src: 'src/assets/images/ring.png', alt: 'Ring' },
+  { src: '/images/chain.png',    alt: 'Chain'    },
+  { src: '/images/bracelet.png', alt: 'Bracelet' },
+  { src: '/images/ring.png',     alt: 'Ring'     },
 ]
 
 const ProductList: React.FC = () => (
