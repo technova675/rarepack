@@ -102,20 +102,7 @@ const CheckoutButton: React.FC = () => {
   return (
     <>
       <>
-        {/* <button
-          onClick={() => setOpenModal(true)}
-          className="mt-8 px-6 py-3 bg-white border-[#626262] rounded-lg text-2xl text-[#626262]"
-        >
-          Checkout
-        </button> */}
-
-        <div className='mt-24'>
-          {/* <button
-            className="border-[#626262] text-[#626262]  h-12 px-6 border rounded-lg text-2xl font-semibold bg-white hover:border-[#626262] focus:outline-none focus:ring-2focus:ring-[#626262] transition"
-          >
-            Checkout
-          </button> */}
-
+        <div className='sm:mt-24 md:mt-12 mt-8'>
           <button
             className="w-[134px] h-[49px] opacity-20 border border-[#626262] rounded-[4px] px-[10px] py-[10px] flex items-center justify-center cursor-pointer"
           >
