@@ -8,9 +8,9 @@ function App() {
 
   return (
     <>
-      <div className="relative min-h-dvh overflow-hidden">
+      <div className="relative flex flex-col min-h-dvh">
         <BannerBackground />
-        <main className="container mx-auto flex flex-col items-center justify-center h-screen">
+        <main className="container mx-auto flex flex-col items-center justify-center flex-1">
           <ProductList />
           <CheckoutButton />
         </main>
