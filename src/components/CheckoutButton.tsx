@@ -17,11 +17,6 @@ const CheckoutButton: React.FC = () => {
   const currency = "INR";
   const receipt = "Receipt no. 1";
   const handlePayment = async () => {
-    // if (!name || !mobile) {
-    //   alert('Please enter name and mobile number')
-    //   return
-    // }
-
     try {
       const response = await fetch("http://localhost:5000/order", {
         method: "POST",
@@ -114,11 +109,24 @@ const CheckoutButton: React.FC = () => {
           Checkout
         </button> */}
 
-        <button
-          className=" mt-8  border-[#626262] text-[#626262]  h-12 px-6 border rounded-lg text-2xl font-semibold bg-white hover:border-[#626262] focus:outline-none focus:ring-2focus:ring-[#626262] transition"
-         >
-          Checkout
-        </button>
+        <div className='mt-24'>
+          {/* <button
+            className="border-[#626262] text-[#626262]  h-12 px-6 border rounded-lg text-2xl font-semibold bg-white hover:border-[#626262] focus:outline-none focus:ring-2focus:ring-[#626262] transition"
+          >
+            Checkout
+          </button> */}
+
+          <button
+            className="w-[134px] h-[49px] opacity-20 border border-[#626262] rounded-[4px] px-[10px] py-[10px] flex items-center justify-center cursor-pointer"
+          >
+            <span className="w-[114px] h-[29px] font-inter font-bold text-[24px] leading-[100%] tracking-[0%] text-[#626262]">
+              Checkout
+            </span>
+          </button>
+
+
+        </div>
+
 
 
         <Modal show={openModal} size="3xl" onClose={() => setOpenModal(false)}>

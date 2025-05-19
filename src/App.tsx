@@ -10,7 +10,6 @@ function App() {
     <>
       <div className="relative min-h-screen overflow-hidden">
         <BannerBackground />
-        {/* <Sidebar />*/}
         <main className="container mx-auto flex flex-col items-center justify-center h-screen">
           <ProductList />
           <CheckoutButton />

@@ -8,8 +8,8 @@ interface Props {
 }
 
 const ProductItem: React.FC<Props> = ({ src, alt }) => {
-  const [quantity, setQuantity] = useState<number>(0)
-  const increment = () => setQuantity(q => q + 1)
+  const [quantity, setQuantity] = useState<string | number>('0')
+  const increment = () => setQuantity((q: any) => Number(q) + 1)
 
   return (
     <div>
@@ -51,33 +51,44 @@ const ProductItem: React.FC<Props> = ({ src, alt }) => {
       {/* Desktop Layout */}
       <div className="hidden md:block">
         <motion.div
-          className="m-4 w-32 border border-gray-200 rounded-lg overflow-visible"
+          className="m-4 w-[11.6rem] border border-[#D0D0D0] rounded-lg overflow-visible"
           initial={{ scale: 1 }}
         >
           <div className="relative group bg-[#D0D0D0]">
             <motion.img
               src={src}
               alt={alt}
-              initial={{ opacity: 0.7 }}
+              initial={{ opacity: 0.9 }}
               whileHover={{ opacity: 1 }}
               transition={{ duration: 0.3 }}
-              className="w-full h-32 object-cover opacity-70 cursor-pointer"
+              className="w-full h-[11.6rem] object-cover opacity-90 bg-[#D0D0D0] cursor-pointer"
             />
-            <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-max bg-white border border-gray-200 rounded-lg p-2 shadow-lg opacity-0 group-hover:opacity-100 z-10">
-              <span className="text-sm font-medium text-gray-800">{alt}</span>
+            <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-max bg-[#D0D0D0] border border-gray-200 rounded-lg p-2 shadow-none opacity-0 group-hover:opacity-100 z-10">
+              <span className="text-sm font-medium text-[#A1A1A1] ">{alt}</span>
             </div>
           </div>
         </motion.div>
         <div className="mt-2 flex items-center justify-end space-x-2 mr-4">
-          <motion.div
-            key={quantity}
+          <motion.input
+            type="number"
+            min="1"
+            value={quantity}
+            onChange={(e) => {
+              let val = e.target.value
+              // Remove all non-digit characters
+              val = val.replace(/\D/g, '')
+
+              // Remove leading zeros unless the value is "0"
+              if (val.length > 1) val = val.replace(/^0+/, '')
+
+              setQuantity(val === '' ? '' : Number(val))
+            }}
             initial={{ scale: 0.8 }}
             animate={{ scale: 1 }}
             transition={{ type: 'spring', stiffness: 300 }}
-            className="w-8 h-8 bg-[#B2B2B2] rounded-md flex items-center justify-center text-2xl font-medium text-white opacity-60"
-          >
-            {quantity}
-          </motion.div>
+            className="w-8 h-8 bg-[#B2B2B2] rounded-md flex text-center justify-center text-2xl font-medium text-white opacity-60 remove-arrow"
+          />
+
           <motion.button
             onClick={increment}
             className="w-8 h-8 border border-gray-300 rounded-md flex items-center justify-center text-xl bg-[#EEEEEE]"
