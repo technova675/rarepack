@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
         {/* 🏷 trademark + burger on one line */}
         <div className="flex sm:hidden items-center justify-center space-x-3 whitespace-nowrap px-4">
           <button onClick={() => setOpen(v => !v)} aria-label="Toggle menu">
-            {open ? <FaTimes size={18}/> : <FaBars size={18}/>}
+            {open ? <FaTimes size={18} /> : <FaBars size={18} />}
           </button>
           <span>rarepackage regd. trademark</span>
         </div>
@@ -42,14 +42,22 @@ const Footer: React.FC = () => {
         )}
 
         {/* 💻 Desktop links */}
-        <div className="hidden sm:flex items-center justify-center space-x-6 pt-2">
-          <a href="#" className="hover:text-gray-500">TOS</a>
-          <a href="#" className="hover:text-gray-500">Policies</a>
-          <a href="#" className="hover:text-gray-500">Returns</a>
-          <a href="#" className="hover:text-gray-500">Testimonials</a>
-          <a href="#" className="hover:text-gray-500">Why?</a>
-          <span className="whitespace-nowrap">rarepackage regd. trademark</span>
+        <div className="hidden sm:flex justify-between items-center w-[58.31rem] h-[1.75rem] pt-2">
+          {/* Left list */}
+          <div className="flex items-center gap-[2rem] w-[23rem] px-[0.75rem] text-[0.75rem] text-gray-400 font-normal leading-none font-['Inter']">
+            <a href="#" className="hover:text-gray-500">TOS</a>
+            <a href="#" className="hover:text-gray-500">Policies</a>
+            <a href="#" className="hover:text-gray-500">Returns</a>
+            <a href="#" className="hover:text-gray-500">Testimonials</a>
+            <a href="#" className="hover:text-gray-500">Why?</a>
+          </div>
+
+          {/* Right trademark */}
+          <div className="w-[10.375rem] text-[0.75rem] text-gray-400 opacity-40 text-right font-normal leading-none font-['Inter']">
+            rarepackage regd. trademark
+          </div>
         </div>
+
       </div>
     </footer>
   )

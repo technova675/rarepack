@@ -25,15 +25,15 @@ const BannerBackground: React.FC = () => {
 
       {/* ⬇️ horizontal marquee at the bottom ⬇️ */}
       <motion.div
-        className="fixed top-16 -left-5 right-[-5rem] w-[110vw] h-16  bg-[#F2F2F2]  z-50 overflow-hidden -rotate-3"
+        className="fixed sm:top-16 top-4 -left-5 right-[-5rem] w-[110vw] h-16  bg-[#F2F2F2]  z-50 overflow-hidden sm:-rotate-3 rotate-3"
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.4 }}
-        transition={{ delay: 0.5, duration: 0.9 }}
+        transition={{ delay: 0.2, duration: 0.4 }}
       >
         <motion.div
           className="flex items-center h-full gap-4 "
-          initial={{ x: 0 }}
-          animate={{ x: '-50%' }}
+          initial={{ x: '-100%' }}
+          animate={{ x: 0 }}
           transition={{
             ease: 'linear',
             duration: 20,     // tweak speed rzp_test_usEOVyevAd1bv3
@@ -51,7 +51,7 @@ const BannerBackground: React.FC = () => {
       {/* ⬇️ Vertical marquee at the bottom ⬇️ */}
       <motion.div
         className="
-        fixed -top-3 sm:right-[5rem] right-[20rem] h-[110vh] w-16 z-50 overflow-hidden sm:-rotate-10 rotate-10 bg-[#F2F2F2]"
+        fixed -top-3 sm:right-[5rem] right-[20rem] h-[110vh] w-16 z-50 overflow-hidden sm:-rotate-10 rotate-8 bg-[#F2F2F2]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.8 }}
         transition={{ delay: 0.5, duration: 0.9 }}
@@ -59,8 +59,8 @@ const BannerBackground: React.FC = () => {
         {/* marquee wrapper */}
         <motion.div
           className="absolute top-0 left-0 w-full flex flex-col items-center gap-32"
-          initial={{ y: 0 }}
-          animate={{ y: '-50%' }}
+          initial={{ y: '-100%'}}
+          animate={{ y: 0 }}
           transition={{
             ease: 'linear',
             duration: 50,         // adjust speed here

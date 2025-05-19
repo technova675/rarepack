@@ -8,7 +8,7 @@ const products = [
 ]
 
 const ProductList: React.FC = () => (
-  <div className="flex justify-center flex-wrap">
+  <div className="flex flex-col md:flex-row md:flex-wrap items-center justify-center gap-4 px-4 py-4">
     {products.map((p, i) => <ProductItem key={i} {...p} />)}
   </div>
 )
