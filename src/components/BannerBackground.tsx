@@ -51,7 +51,7 @@ const BannerBackground: React.FC = () => {
       {/* ⬇️ Vertical marquee at the bottom ⬇️ */}
       <motion.div
         className="
-        fixed -top-3 sm:right-[5rem]  lg:right-[8rem] h-[110vh] w-16 z-50 overflow-hidden sm:-rotate-10 rotate-4 bg-[#F2F2F2]"
+        fixed -top-3 sm:right-[5rem] right-[20rem] lg:right-[8rem] h-[110vh] w-12 z-50 overflow-hidden sm:-rotate-10 rotate-6 bg-[#F2F2F2]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.8 }}
         transition={{ delay: 0.5, duration: 0.9 }}
