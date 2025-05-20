@@ -45,7 +45,7 @@ const ProductItem: React.FC<Props> = ({ images, alt }) => {
             className="w-full h-full"
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
-            onDragEnd={(e, info) => {
+            onDragEnd={(_, info) => {
               if (info.offset.x < -50) nextImage()
               else if (info.offset.x > 50) prevImage()
             }}
