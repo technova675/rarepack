@@ -1,21 +1,24 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
+
 const BannerBackground: React.FC = () => {
   const count = 20
   const items = Array.from({ length: count }).map((_, i) => (
-    <div
-      key={i}
-      className="px-3 py-1 border bg-[#F2F2F2] font-[Inter] font-[700] text-base border-[#373737] text-[#373737] rounded-[4px] whitespace-nowrap"
-      style={{ transform: 'rotate(90deg)' }}
-    >
-      RARE PACKAGE
-    </div>
+   <span
+  key={i}
+   className="px-3 py-1 font-bold text-lg rounded-[4px] whitespace-nowrap rotate-90 font-jetbrains leading-none tracking-[-0.06em] [word-spacing:0.5rem]  bg-[#F2F2F2] text-[#373737] border border-[#373737]"
+>
+  RARE PACKAGE
+</span>
   ))
+// const items = Array.from({ length: count }).map((_, i) => (
+//   <img key={i} src="images/Frame 44.svg" alt="Rare Icon" className="w-[48px] h-auto" />
+// ))
 
   // horizontal spans
   const hItems = Array.from({ length: count }).map((_, i) => (
-    <span key={i} className="inline-block px-4 bg-[#F2F2F2] font-[Inter] font-[700] text-base border border-[#373737] text-[#373737]  rounded-[4px] whitespace-nowrap">
+    <span key={i} className="inline-block px-4 bg-[#F2F2F2] font-jetbrains text-xl leading-none tracking-[-0.06em] [word-spacing:0.8rem] border border-[#373737] text-[#373737]  rounded-[4px] whitespace-nowrap">
       RARE PACKAGE
     </span>
   ))
@@ -25,10 +28,10 @@ const BannerBackground: React.FC = () => {
 
       {/* ⬇️ horizontal marquee at the bottom ⬇️ */}
       <motion.div
-        className="fixed sm:top-16 top-4 -left-5 right-[-5rem] w-[110vw] h-16  bg-[#F2F2F2]  z-50 overflow-hidden sm:-rotate-3 rotate-3"
-        initial={{ opacity: 0 }}
+        className="fixed sm:top-20 top-4 -left-5 right-[-5rem] w-[110vw] h-16  bg-[#F2F2F2]  z-50 overflow-hidden sm:-rotate-3 rotate-3"
+        initial={{ opacity: 0.4 }}
         animate={{ opacity: 0.4 }}
-        transition={{ delay: 0.2, duration: 0.4 }}
+        transition={{ delay: 0.2, duration: 0.1 }}
       >
         <motion.div
           className="flex items-center h-full gap-4 "
@@ -51,29 +54,32 @@ const BannerBackground: React.FC = () => {
       {/* ⬇️ Vertical marquee at the bottom ⬇️ */}
       <motion.div
         className="
-        fixed -top-3 sm:right-[5rem] right-[20rem] lg:right-[8rem] h-[110vh] w-12 z-50 overflow-hidden sm:-rotate-10 rotate-6 bg-[#F2F2F2]"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.8 }}
-        transition={{ delay: 0.5, duration: 0.9 }}
+        fixed -top-3 sm:right-[5rem] right-[20rem] lg:right-[8rem] h-[110vh] w-16 z-50 overflow-hidden sm:-rotate-10 rotate-6 bg-[#F2F2F2]"
+        initial={{ opacity: 0.8 }}
+        animate={{ opacity: 0.7 }}
+        transition={{ delay: 0.2, duration: 0.5 }}
       >
         {/* marquee wrapper */}
         <motion.div
-          className="absolute top-0 left-0 w-full flex flex-col items-center gap-32"
-          initial={{ y: '-100%'}}
-          animate={{ y: 0 }}
+          className="flex flex-col justify-center items-center gap-34"
+          initial={{ y: '-50%'  }}
+          animate={{ y: 0}}
           transition={{
             ease: 'linear',
-            duration: 50,         // adjust speed here
+            duration: 30,         // adjust speed here
             repeat: Infinity,
             repeatType: 'loop',
           }}
         >
-          {/* first batch */}
-          {items}
-          {/* duplicate batch */}
+            
+          {/* {items}
+        
           {items.map((child, i) =>
             React.cloneElement(child, { key: `dup-${i}` })
-          )}
+          )} */}
+          {[...items, ...items.map((child, i) =>
+      React.cloneElement(child, { key: `dup-${i}` })
+    )]}
         </motion.div>
       </motion.div>
 

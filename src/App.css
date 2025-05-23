@@ -6,3 +6,9 @@
 .remove-arrow {
     -moz-appearance: textfield;
 }
+
+.text-footer {
+     font-family: 'Inter';
+     font-size: 12px;
+}
+

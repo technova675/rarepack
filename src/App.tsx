@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <div className="relative flex flex-col min-h-dvh">
-        <BannerBackground />
+        <BannerBackground  />
         <main className="container mx-auto flex flex-col items-center justify-center flex-1">
           <ProductList />
           <CheckoutButton />

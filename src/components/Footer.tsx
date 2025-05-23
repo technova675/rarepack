@@ -44,16 +44,16 @@ const Footer: React.FC = () => {
         {/* 💻 Desktop links */}
         <div className="hidden sm:flex justify-between items-center w-[58.31rem] h-[1.75rem] pt-2">
           {/* Left list */}
-          <div className="flex items-center gap-[2rem] w-[23rem] px-[0.75rem] text-[0.75rem] text-gray-400 font-normal leading-none font-['Inter']">
-            <a href="#" className="hover:text-gray-500">TOS</a>
-            <a href="#" className="hover:text-gray-500">Policies</a>
-            <a href="#" className="hover:text-gray-500">Returns</a>
-            <a href="#" className="hover:text-gray-500">Testimonials</a>
-            <a href="#" className="hover:text-gray-500">Why?</a>
+          <div className="flex items-center gap-[2rem] w-[23rem] px-[0.75rem]  text-gray-400 font-normal leading-none text-footer">
+            <a href="#" className="hover:text-[#D0D0D0]">TOS</a>
+            <a href="#" className="hover:text-[#D0D0D0]">Policies</a>
+            <a href="#" className="hover:text-[#D0D0D0]">Returns</a>
+            <a href="#" className="hover:text-[#D0D0D0]">Testimonials</a>
+            <a href="#" className="hover:text-[#D0D0D0]">Why?</a>
           </div>
 
           {/* Right trademark */}
-          <div className="w-[10.375rem] text-[0.75rem] text-gray-400 opacity-40 text-right font-normal leading-none font-['Inter']">
+          <div className="w-[10.375rem] text-[0.75rem] text-gray-400 text-right font-normal leading-none font-['Inter']">
             rarepackage regd. trademark
           </div>
         </div>
