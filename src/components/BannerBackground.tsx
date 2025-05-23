@@ -25,7 +25,7 @@ const BannerBackground: React.FC = () => {
 
       {/* ⬇️ horizontal marquee at the bottom ⬇️ */}
       <motion.div
-        className="fixed sm:top-20 top-12 w-[110vw] h-12  bg-[#F2F2F2]  z-50 overflow-hidden sm:-rotate-3 rotate-3"
+        className="fixed sm:top-20 top-12 -left-5 right-[-5rem] w-[110vw] h-12 lg:h-16  bg-[#F2F2F2]  z-50 overflow-hidden sm:-rotate-3 rotate-3"
         initial={{ opacity: 0.4 }}
         animate={{ opacity: 0.4 }}
         transition={{ delay: 0.2, duration: 0.1 }}
@@ -51,7 +51,7 @@ const BannerBackground: React.FC = () => {
       {/* ⬇️ Vertical marquee at the bottom ⬇️ */}
       <motion.div
         className="
-        fixed -top-3 sm:right-[5rem] right-[21rem] -left-3 lg:right-[8rem] h-[110vh] w-12 z-50 overflow-hidden sm:-rotate-10 rotate-8 bg-[#F2F2F2]"
+        fixed -top-3 sm:right-[5rem] right-[21rem] lg:left-auto  -left-3 lg:right-[8rem] h-[110vh] lg:w-16 w-12 z-50 overflow-hidden sm:-rotate-10 rotate-6 bg-[#F2F2F2]"
         initial={{ opacity: 0.8 }}
         animate={{ opacity: 0.7 }}
         transition={{ delay: 0.2, duration: 0.5 }}
