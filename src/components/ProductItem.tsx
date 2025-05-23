@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { FaPlus } from "react-icons/fa"
-import { useTransition } from '@react-spring/web'
 
 interface Props {
   images: string[]
